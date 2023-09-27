@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 23:42:03 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/09/27 00:18:12 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/09/27 03:26:14 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 Zombie* newZombie( std::string name )
 {
-    Zombie zombie(name);
-    Zombie *newZ = &zombie;
-
-    return newZ;
+    return new Zombie(name);
 }

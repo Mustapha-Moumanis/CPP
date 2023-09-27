@@ -1,6 +1,6 @@
 NAME = Zombie
 
-FILES = main.cpp Zombie.cpp newZombie.cpp #randomChump.cpp
+FILES = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 CC = c++
 
