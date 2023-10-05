@@ -1,6 +1,6 @@
-NAME = my_awesome_phoneBook
+NAME = MoarBrainz!
 
-FILES = main.cpp PhoneBook.cpp Contact.cpp
+FILES = main.cpp Zombie.cpp zombieHorde.cpp
 
 CC = c++
 
@@ -13,4 +13,7 @@ $(NAME): $(FILES)
 
 clean:
 	rm -f $(NAME)
-	
+
+fclean:clean
+
+re: fclean all

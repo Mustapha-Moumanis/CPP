@@ -1,6 +1,6 @@
-NAME = megaphone
+NAME = BraiiiiiiinnnzzzZ
 
-FILES = megaphone.cpp
+FILES = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 CC = c++
 
@@ -13,3 +13,7 @@ $(NAME): $(FILES)
 
 clean:
 	rm -f $(NAME)
+
+fclean:clean
+
+re: fclean all

@@ -1,6 +1,6 @@
-NAME = Zombie
+NAME = HiThisIsBrain
 
-FILES = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+FILES = main.cpp
 
 CC = c++
 
@@ -15,3 +15,5 @@ clean:
 	rm -f $(NAME)
 
 fclean:clean
+
+re: fclean all
