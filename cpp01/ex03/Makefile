@@ -4,7 +4,7 @@ FILES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 all: $(NAME)
 

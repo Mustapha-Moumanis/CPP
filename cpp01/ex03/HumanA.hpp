@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:45:41 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/05 16:19:17 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/06 00:59:03 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 
 class HumanA
 {
-	public :
+	private :
 		Weapon &WeaponA;
 		std::string HumanName;
+
+	public :
 
 		HumanA(std::string n, Weapon &Weap);
 
