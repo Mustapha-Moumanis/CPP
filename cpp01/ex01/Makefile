@@ -1,4 +1,4 @@
-NAME = MoarBrainz!
+NAME = MoarBrainz
 
 FILES = main.cpp Zombie.cpp zombieHorde.cpp
 

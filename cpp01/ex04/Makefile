@@ -1,6 +1,6 @@
-NAME = SeIsForLosers
+NAME = SedIsForLosers
 
-FILES = main.cpp #Weapon.cpp HumanA.cpp HumanB.cpp
+FILES = main.cpp SedIsForLosers.cpp #HumanA.cpp HumanB.cpp
 
 CC = c++
 
