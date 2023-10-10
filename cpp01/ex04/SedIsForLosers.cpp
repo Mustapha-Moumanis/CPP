@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 00:54:34 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/07 03:03:23 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/09 18:53:59 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ SedIsForLosers::SedIsForLosers(std::ifstream &file, std::string fname, std::stri
 				break;
 			ofs << std::endl;
 		}
+		ofs.close();
 	}
 	else
 		std::cout << "You have a problem if the File : " << name << std::endl;

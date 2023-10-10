@@ -1,6 +1,6 @@
 NAME = SedIsForLosers
 
-FILES = main.cpp SedIsForLosers.cpp #HumanA.cpp HumanB.cpp
+FILES = main.cpp SedIsForLosers.cpp
 
 CC = c++
 
