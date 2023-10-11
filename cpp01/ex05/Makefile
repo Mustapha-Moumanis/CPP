@@ -2,14 +2,14 @@ NAME = harl
 
 FILES = main.cpp Harl.cpp
 
-CXX = c++
+C = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(FILES)
-	$(CXX) $(CPPFLAGS) $(FILES) -o $(NAME)
+	$(C) $(FLAGS) $(FILES) -o $(NAME)
 
 clean:
 	rm -f $(NAME)

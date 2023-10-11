@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:55:09 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/10 02:23:00 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/11 21:14:20 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,19 @@ void Harl::complain( std::string level )
     {
         case 'D':
             debug();
+            info();
+            warning();
+            error();
+            break ;
         case 'I':
             info();
+            warning();
+            error();
+            break ;
         case 'W':
             warning();
+            error();
+            break ;
         case 'E':
             error();
             break;
