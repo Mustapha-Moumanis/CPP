@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 22:36:54 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/09/26 02:54:42 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/11 22:47:36 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,9 @@ void Contact::valableContact(void)
 		std::cout << "The contact not found!!" << std::endl;
 		return ;
 	}
-
-	std::cout << std::setw(10) << "index" << "|" << std::setw(10) << "first name" << "|" << std::setw(10) << "last name" << "|" << std::setw(10) << "nickname" << "|" <<std::endl;
+	
+	if (this->index == 1)
+		std::cout << std::setw(10) << "index" << "|" << std::setw(10) << "first name" << "|" << std::setw(10) << "last name" << "|" << std::setw(10) << "nickname" << "|" <<std::endl;
 
 	std::cout << std::setw(10) << this->index << "|";
 	if (this->first_name.length() >= 10)

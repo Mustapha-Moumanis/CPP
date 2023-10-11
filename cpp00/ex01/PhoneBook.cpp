@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 17:37:05 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/09/26 02:47:09 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/11 22:43:41 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void PhoneBook::Add()
 void PhoneBook::Search()
 {
 	std::string enter;
-	std::stringstream ss;
 	int index;
 
 	if (!this->len)
@@ -92,19 +91,13 @@ void PhoneBook::Search()
 		std::getline(std::cin, enter);
 		if (std::cin.eof())
 			return ;
-		if(!isAlldigit(enter))
+		if (enter.length() == 1 && enter.find_first_not_of("12345678"))
 		{
-			std::cout << "Error : Digit please!!" << std::endl;
-			continue ;
-		}
-		ss << enter;
-		ss >> index;
-		if (index < 1 || index > 8)
-			std::cout << "Error : The index that is either incorrect" << std::endl;
-		else
-		{
+			index = enter[0] - '0';
 			this->table[index - 1].getContact();
 			break ;
 		}
+		else
+			std::cout << "Error : The index that is either incorrect" << std::endl;
 	}
 }
