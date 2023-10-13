@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:51:18 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/10 02:11:42 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/13 03:26:56 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,9 @@ int main(int ac, char **av)
 	{
 		Harl harl;
 
-		void (Harl::*comp)(std::string) = &Harl::complain;
-		
-		(harl.*comp)(av[1]);
-		
+		harl.complain(av[1]);
+		return 0;
 	}
-	else
-	{
-		std::cout << "Unsert the level: DEBUG / INFO / WARNING / ERROR" << std::endl;
-	}
+	std::cout << "Unsert the level: DEBUG / INFO / WARNING / ERROR" << std::endl;
+	return 1;
 }

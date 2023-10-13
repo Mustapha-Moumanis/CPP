@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:55:09 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/11 21:14:20 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/13 04:00:54 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,43 +36,33 @@ void Harl::error( void )
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-int Harl::check_level( std::string level )
-{
-    if (level == "DEBUG")
-        return ('D');
-    else if (level == "INFO")
-        return ('I');
-    else if (level == "WARNING")
-        return ('W');
-    else if (level == "ERROR")
-        return ('E');
-    else
-        return (0);
-}
-
 void Harl::complain( std::string level )
 {
-    int lvl;
-    
-    lvl = check_level(level);
+    int lvl = 0;
+
+    std::string names[4] = {
+        "DEBUG",
+        "INFO",
+        "WARNING",
+        "ERROR"
+    };
+
+    while (lvl < 4)
+    {
+        if (!names[lvl].compare(level))
+            break ;
+        lvl++;
+    }
+
     switch (lvl)
     {
-        case 'D':
+        case 0:
             debug();
+        case 1:
             info();
+        case 2:
             warning();
-            error();
-            break ;
-        case 'I':
-            info();
-            warning();
-            error();
-            break ;
-        case 'W':
-            warning();
-            error();
-            break ;
-        case 'E':
+        case 3:
             error();
             break;
         default:

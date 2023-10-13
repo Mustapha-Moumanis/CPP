@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:55:09 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/10 02:27:19 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/13 04:01:43 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,40 +36,22 @@ void Harl::error( void )
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-int Harl::check_level( std::string level )
-{
-    if (level == "DEBUG")
-        return ('D');
-    else if (level == "INFO")
-        return ('I');
-    else if (level == "WARNING")
-        return ('W');
-    else if (level == "ERROR")
-        return ('E');
-    else
-        return (0);
-}
-
 void Harl::complain( std::string level )
 {
-    int lvl;
-    
-    lvl = check_level(level);
-    switch (lvl)
+    levels arr[4] = {
+        {"DEBUG", &Harl::debug},
+        {"INFO", &Harl::info},
+        {"WARNING", &Harl::warning},
+        {"ERROR", &Harl::error}
+    };
+
+    for (int i = 0; i < 4 ; i++)
     {
-        case 'D':
-            debug();
-            break;
-        case 'I':
-            info();
-            break;
-        case 'W':
-            warning();
-            break;
-        case 'E':
-            error();
-            break;
-        default: 
-            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+        if (!arr[i].name.compare(level))
+        {
+            (this->*(arr[i].pmf))();
+            return ;
+        }
     }
+    std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }

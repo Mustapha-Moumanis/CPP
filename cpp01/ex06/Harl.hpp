@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:55:36 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/09 21:18:14 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/13 04:01:21 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Harl
         void error( void );
     
     public :
-        int  check_level( std::string level );
         void complain( std::string level );
 };
 
