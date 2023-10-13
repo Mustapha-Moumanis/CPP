@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 17:37:05 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/11 22:43:41 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/13 04:06:38 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ std::string	PhoneBook::get_val(std::string str)
 
 void PhoneBook::Add()
 {
-	std::string result = "";
-
 	this->first_name = get_val("First name: ");
 	this->last_name = get_val("Last name: ");
 	this->nickname = get_val("Nickname: ");
@@ -83,7 +81,7 @@ void PhoneBook::Search()
 	}
 	
 	for (int i = 0; i < this->len; i++)
-		this->table[i].valableContact();
+		this->table[i].availableContact();
 
 	while (1)
 	{

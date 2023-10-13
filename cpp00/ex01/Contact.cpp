@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 22:36:54 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/11 22:47:36 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/13 04:05:35 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void Contact::setContact(int id, std::string first_name, std::string last_name, 
 
 }
 
-void Contact::valableContact(void)
+void Contact::availableContact(void)
 {
 	if (this->index == 0)
 	{
