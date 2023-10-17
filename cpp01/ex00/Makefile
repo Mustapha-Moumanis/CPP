@@ -1,4 +1,4 @@
-NAME = BraiiiiiiinnnzzzZ
+NAME = brainz
 
 FILES = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 

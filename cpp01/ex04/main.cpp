@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:43:19 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/07 02:58:27 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/15 08:51:09 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,13 @@ int main(int ac, char **av)
 		if (!isRegFile(av[1]))
 			std::cout << av[1] << " is not a regular file" << std::endl;
 		else if (ifs.is_open())
-			SedIsForLosers obj(ifs, av[1], av[2], av[3]);
+		{
+			std::string s2 = av[2];
+			if (s2.empty())
+				std::cout << "There's a problem with the second parameter" << std::endl;
+			else
+				SedIsForLosers obj(ifs, av[1], av[2], av[3]);
+		}
 		else
 			std::cout << "Unable to open \"" << av[1] << "\""<< std::endl;
 	}

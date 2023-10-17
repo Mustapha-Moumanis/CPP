@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 22:22:43 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/05 01:20:43 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/15 00:48:40 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Zombie
         std::string name;
 
     public :
-        Zombie( std::string zname );
+        Zombie( std::string n );
         ~Zombie( void );
         void announce( void );
 };

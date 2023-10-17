@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 22:36:54 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/13 04:05:35 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/14 00:30:59 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void Contact::setContact(int id, std::string first_name, std::string last_name, 
 	this->phone_number = phone_number;
 	this->darkest_secret = darkest_secret;
 	std::cout << "The new contact *" << id << "* was successfully saved" << std::endl;
-
 }
 
 void Contact::availableContact(void)

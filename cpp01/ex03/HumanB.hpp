@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:45:12 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/06 00:59:19 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/15 02:03:32 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ class HumanB
 		std::string HumanName;
 	
 	public :
-	
 		HumanB(std::string name);
 		void setWeapon(Weapon &Weap);
 		void attack();
+
 };
 
 #endif

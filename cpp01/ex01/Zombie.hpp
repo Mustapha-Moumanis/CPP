@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 23:33:59 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/05 01:10:09 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/15 01:52:22 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ class Zombie
         void SetName(std::string n);
 };
 
-
 Zombie* zombieHorde( int N, std::string name );
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 00:54:34 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/09 18:53:59 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/15 02:25:57 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ SedIsForLosers::SedIsForLosers(std::ifstream &file, std::string fname, std::stri
 
 SedIsForLosers::~SedIsForLosers()
 {
-	this->ifs.close();
+	ifs.close();
 }

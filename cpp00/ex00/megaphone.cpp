@@ -1,11 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/13 22:49:39 by mmoumani          #+#    #+#             */
+/*   Updated: 2023/10/13 23:35:05 by mmoumani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 
 void    toUpperCase(std::string str)
 {
-	int i = -1;
-
-	while (str[++i])
-		std::cout << (char)toupper(str[i]);
+	for (std::string::iterator i = str.begin(); i != str.end(); ++i)
+        std::cout << (char)toupper(*i);
 }
 
 int main(int ac, char *av[])

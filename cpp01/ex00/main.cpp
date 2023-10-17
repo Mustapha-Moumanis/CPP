@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 23:27:02 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/09/27 03:27:42 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/15 00:50:12 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int main()
     Zombie z("Foo");
     z.announce();
 
-    Zombie *newZ;
-    newZ = newZombie("zombie 1");
-    newZ->announce();
+    randomChump("Bar");
 
-    randomChump("ran");
+    Zombie *newZ;
+    newZ = newZombie("Zii");
+    newZ->announce();
     delete newZ;
 }
