@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:30:09 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/22 11:19:16 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/23 14:45:54 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,14 @@ Fixed::Fixed() : fixedPoint(0)
 Fixed::Fixed(const Fixed &nother)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->fixedPoint = nother.fixedPoint;
+	*this = nother;
+}
+
+const Fixed &Fixed::operator=(const Fixed &other)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->fixedPoint = other.fixedPoint;
+	return *this;
 }
 
 Fixed::Fixed(const int in)
@@ -43,12 +50,6 @@ float Fixed::toFloat( void ) const
 int Fixed::toInt( void ) const
 {
 	return (fixedPoint >> nBits);
-}
-
-const Fixed &Fixed::operator=(const Fixed &other)
-{
-	this->fixedPoint = other.fixedPoint;
-	return *this;
 }
 
 Fixed::~Fixed()
