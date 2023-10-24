@@ -6,11 +6,13 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:30:09 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/23 14:33:05 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:34:37 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+// Orthodox Canonical Form
 
 Fixed::Fixed() : fixedPoint(0)
 {
@@ -23,7 +25,7 @@ Fixed::Fixed(const Fixed &nother)
 	*this = nother;
 }
 
-const Fixed &Fixed::operator=(const Fixed &other)
+Fixed &Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->fixedPoint = other.getRawBits();
@@ -34,6 +36,8 @@ Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
 }
+
+// Member functions
 
 int Fixed::getRawBits( void ) const
 {

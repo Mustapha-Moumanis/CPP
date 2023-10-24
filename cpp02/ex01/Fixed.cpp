@@ -6,11 +6,13 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:30:09 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/23 14:45:54 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:32:17 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+// Orthodox Canonical Form
 
 Fixed::Fixed() : fixedPoint(0)
 {
@@ -23,7 +25,7 @@ Fixed::Fixed(const Fixed &nother)
 	*this = nother;
 }
 
-const Fixed &Fixed::operator=(const Fixed &other)
+Fixed &Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->fixedPoint = other.fixedPoint;
@@ -33,8 +35,7 @@ const Fixed &Fixed::operator=(const Fixed &other)
 Fixed::Fixed(const int in)
 {
 	std::cout << "Int constructor called" << std::endl;
-	fixedPoint = in << nBits;
-
+	fixedPoint = in * (1 << nBits);
 }
 
 Fixed::Fixed(const float fn)
@@ -43,18 +44,21 @@ Fixed::Fixed(const float fn)
 	fixedPoint = roundf(fn * (1 << nBits));
 }
 
-float Fixed::toFloat( void ) const
-{
-	return ((float)fixedPoint  / (1 << nBits));
-}
-int Fixed::toInt( void ) const
-{
-	return (fixedPoint >> nBits);
-}
-
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
+}
+
+// Member functions
+
+float Fixed::toFloat( void ) const
+{
+	return ((float)fixedPoint / (1 << nBits));
+}
+
+int Fixed::toInt( void ) const
+{
+	return (fixedPoint / (1 << nBits));
 }
 
 int Fixed::getRawBits( void ) const
@@ -68,6 +72,8 @@ void Fixed::setRawBits( int const raw )
 	std::cout << "setRawBits member function called" << std::endl;
 	this->fixedPoint = raw;
 }
+
+// Overload of the insertion (<<) operator
 
 std::ostream& operator<<(std::ostream& os, const Fixed& rhs)
 {
