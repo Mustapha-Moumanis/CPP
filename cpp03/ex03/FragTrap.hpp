@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:32:25 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/25 18:16:35 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/25 21:41:19 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class  FragTrap : public ClapTrap
+class  FragTrap : virtual public ClapTrap
 {    public :
         FragTrap();
 		FragTrap(std::string name);

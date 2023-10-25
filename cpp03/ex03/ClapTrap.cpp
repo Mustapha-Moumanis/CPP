@@ -1,4 +1,3 @@
-#include "ClapTrap.hpp"
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,20 +6,28 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:28:32 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/24 13:28:33 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:21:51 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : Name("ClapTrap"), hitPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap()
 {
 	std::cout << "Default constructor called" << std::endl;
+	Name = "ClapTrap";
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
 }
 
-ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << "Parameterized constructor called" << std::endl;
+	Name = name;
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
 }
 
 ClapTrap::ClapTrap(ClapTrap &other)
@@ -60,24 +67,25 @@ void ClapTrap::attack(const std::string &target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (hitPoints == 0 || energyPoints == 0)
-		std::cout << "ClapTrap " << Name << " can't do anything!!" << std::endl;
+		std::cout << Name << " can't do anything!!" << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << Name << " take " << amount << " of damage!" << std::endl;
+		std::cout << Name << " take " << amount << " of damage!" << std::endl;
 		if (amount > hitPoints)
 			hitPoints = 0;
 		else
 			hitPoints -= amount;
 	}
+
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (hitPoints == 0 || energyPoints == 0)
-		std::cout << "ClapTrap " << Name << " can't do anything!!" << std::endl;
+		std::cout << Name << " can't do anything!!" << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << Name <<  " repairs itself, it gets " << amount << " hit points back." << std::endl;
+		std::cout << Name <<  " repairs itself, it gets " << amount << " hit points back." << std::endl;
 		hitPoints += amount;
 		energyPoints--;
 	}

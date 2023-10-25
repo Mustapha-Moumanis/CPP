@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:37:19 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/25 21:14:35 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/25 21:54:03 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ ScavTrap::ScavTrap()
 {
 	std::cout << "ScavTrap : Default constructor called" << std::endl;
     Name = "ScavTrap";
-    hitPoints = 10;
-    energyPoints = 10;
-    attackDamage = 0;
+    hitPoints = 100;
+    energyPoints = 50;
+    attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name)
