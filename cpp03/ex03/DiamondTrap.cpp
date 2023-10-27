@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 20:47:54 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/25 22:45:15 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/27 17:17:13 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,6 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 DiamondTrap::~DiamondTrap()
 {
 	std::cout << "DiamondTrap : Destructor called" << std::endl;
-}
-
-void DiamondTrap::attack(const std::string &target)
-{
-	ScavTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI(void)

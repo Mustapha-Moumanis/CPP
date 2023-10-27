@@ -14,11 +14,13 @@
 
 int main( void )
 {
-    
-    ClapTrap a;
-    ClapTrap b("Hlima");
-    b.takeDamage(9);
-    b.takeDamage(1);
-    b.takeDamage(1);
+    ClapTrap A("*A*");
+
+    for (int i = 0; i < 10; i++)
+    {
+        A.takeDamage(1);
+        A.beRepaired(1);
+    }
+    A.attack("*B*");
     return 0;
 }

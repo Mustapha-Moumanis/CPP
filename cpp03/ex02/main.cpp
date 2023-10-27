@@ -16,32 +16,26 @@
 
 int main( void )
 {
-    ClapTrap a("Parent");
-    
-    a.attack("Child");
-    a.takeDamage(9);
-    a.beRepaired(1);
-    a.takeDamage(2);
-    a.beRepaired(1);
-    std::cout << std::endl;
-    
-    ScavTrap b("Child 1");
-    b.attack("Parent");
-    b.takeDamage(99);
-    b.beRepaired(1);
-    b.takeDamage(2);
-    b.beRepaired(1);
-    b.guardGate();
-    std::cout << std::endl;
-    
-    FragTrap c("Child 2");
-    c.attack("Parent");
-    c.takeDamage(99);
-    c.beRepaired(1);
-    c.takeDamage(2);
-    c.beRepaired(1);
-    c.highFivesGuys();
+    ScavTrap B("*B*");
 
+    std::cout << std::endl;
+    B.attack("*A*");
+    B.takeDamage(99);
+    B.beRepaired(1);
+    B.takeDamage(2);
+    B.beRepaired(1337);
+    B.guardGate();
+    std::cout << std::endl;
+
+    FragTrap C("*C*");
+
+    std::cout << std::endl;
+    C.attack("*A*");
+    C.takeDamage(99);
+    C.beRepaired(1);
+    C.takeDamage(2);
+    C.beRepaired(1337);
+    C.highFivesGuys();
     std::cout << std::endl;
 
     return 0;

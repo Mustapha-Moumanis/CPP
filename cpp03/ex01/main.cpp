@@ -15,22 +15,15 @@
 
 int main( void )
 {
-    ClapTrap a("Parent");
-    
-    a.attack("Child");
-    a.takeDamage(9);
-    a.beRepaired(1);
-    a.takeDamage(2);
-    a.beRepaired(1);
-    std::cout << std::endl;
+    ScavTrap B("*B*");
 
-    ScavTrap b("Child");
-    b.attack("Parent");
-    b.takeDamage(99);
-    b.beRepaired(1);
-    b.takeDamage(2);
-    b.beRepaired(1);
-    b.guardGate();
+    std::cout << std::endl;
+    B.attack("*A*");
+    B.takeDamage(99);
+    B.beRepaired(1);
+    B.takeDamage(2);
+    B.beRepaired(1337);
+    B.guardGate();
     std::cout << std::endl;
 
     return 0;

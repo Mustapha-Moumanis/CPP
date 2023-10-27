@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:26:13 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/25 22:08:13 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:27:41 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,16 @@
 
 int main( void )
 {
-    DiamondTrap a("friiiiiiiida");
-    a.whoAmI();
-    a.attack("halloma");
+    DiamondTrap diamond("Diaaaaaamond");
+
+    std::cout << std::endl;
+    diamond.attack("Enemie");
+
+    diamond.takeDamage(1337);
+    diamond.beRepaired(1337);
+    diamond.highFivesGuys();
+    diamond.whoAmI();
+    std::cout << std::endl;
+
     return 0;
 }

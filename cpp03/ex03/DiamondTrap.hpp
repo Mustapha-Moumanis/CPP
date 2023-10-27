@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 20:47:51 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/25 22:12:15 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/27 17:17:04 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap &operator = ( const DiamondTrap &other );
 		~DiamondTrap();
 
-		void attack(const std::string &target);
         void whoAmI();
 };
 
