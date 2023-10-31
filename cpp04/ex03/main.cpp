@@ -6,38 +6,28 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:25:39 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/31 16:16:19 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/10/31 19:27:32 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "AMateria.hpp"
 
 int main()
 {
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    delete j;
-    delete i;
-
-    std::cout << std::endl;
-
-    unsigned int nb = 4;
-    const Animal *arr[4];
-
-    for (unsigned int i = 0; i < nb; i++)
-    {
-        if (i % 2)
-            arr[i] = new Cat();
-        else
-            arr[i] = new Dog();
-    }
-    std::cout << std::endl;
-    for (unsigned int i = 0; i < nb; i++)
-        delete arr[i];
-
+    // IMateriaSource* src = new MateriaSource();
+    // src->learnMateria(new Ice());
+    // src->learnMateria(new Cure());
+    // ICharacter* me = new Character("me");
+    // AMateria* tmp;
+    // tmp = src->createMateria("ice");
+    // me->equip(tmp);
+    // tmp = src->createMateria("cure");
+    // me->equip(tmp);
+    // ICharacter* bob = new Character("bob");
+    // me->use(0, *bob);
+    // me->use(1, *bob);
+    // delete bob;
+    // delete me;
+    // delete src;
     return 0;
 }

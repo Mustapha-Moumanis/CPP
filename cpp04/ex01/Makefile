@@ -1,10 +1,10 @@
 NAME = a.out
 
-FILES = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+FILES = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -fsanitize=address -g -std=c++98 
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 

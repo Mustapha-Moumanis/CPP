@@ -1,6 +1,6 @@
 NAME = a.out
 
-FILES = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+FILES = main.cpp AMateria.cpp
 
 CC = c++
 
