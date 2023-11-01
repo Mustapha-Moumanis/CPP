@@ -1,10 +1,10 @@
 NAME = a.out
 
-FILES = main.cpp AMateria.cpp
+FILES = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
 all: $(NAME)
 

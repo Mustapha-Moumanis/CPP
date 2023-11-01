@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:55:11 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/31 20:21:02 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/01 18:36:25 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 AMateria::AMateria()
 {
 	std::cout << "AMateria Default constructor called" << std::endl;
+	this->type = "";
 }
 
 AMateria::AMateria(std::string const & type)
@@ -47,7 +48,7 @@ std::string const & AMateria::getType() const
 	return this->type;
 }
 
-// void AMateria::use(ICharacter& target)
-// {
-	
-// }
+void AMateria::use(ICharacter& target)
+{
+	std::cout << "" << target.getName() << std::endl;
+}
