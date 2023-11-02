@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 19:38:25 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/31 19:41:45 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/02 21:36:19 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,29 @@
 
 Cure::Cure()
 {
-	std::cout << "Cure Default constructor called" << std::endl;
     type = "cure";
 }
 
 Cure::Cure(Cure &other) 
 {
-	std::cout << "Cure Copy constructor called" << std::endl;
 	*this = other;
 }
 
 Cure &Cure::operator=(const Cure &other)
 {
-	std::cout << "Cure Copy assignment operator called" << std::endl;
 	if (this != &other)
 		type = other.type;
 	return *this;
 }
 
-Cure::~Cure()
-{
-	std::cout << "Cure Destructor called" << std::endl;
-}
+Cure::~Cure() {}
 
 AMateria* Cure::clone() const
 {
     return new Cure;
+}
+
+void Cure::use(ICharacter& target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

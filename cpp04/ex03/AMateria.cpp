@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:55:11 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/01 18:36:25 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/02 21:38:43 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,27 @@
 
 AMateria::AMateria()
 {
-	std::cout << "AMateria Default constructor called" << std::endl;
-	this->type = "";
+	this->type = "[AMateria type]";
 }
 
 AMateria::AMateria(std::string const & type)
 {
-	std::cout << "AMateria Parameterized constructor called" << std::endl;
 	this->type = type;
 }
 
 AMateria::AMateria(AMateria &other) 
 {
-	std::cout << "AMateria Copy constructor called" << std::endl;
 	*this = other;
 }
 
 AMateria &AMateria::operator=(const AMateria &other)
 {
-	std::cout << "AMateria Copy assignment operator called" << std::endl;
 	if (this != &other)
 		type = other.type;
 	return *this;
 }
 
-AMateria::~AMateria()
-{
-	std::cout << "AMateria Destructor called" << std::endl;
-}
+AMateria::~AMateria() {}
 
 std::string const & AMateria::getType() const
 {
@@ -50,5 +43,5 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-	std::cout << "" << target.getName() << std::endl;
+	std::cout << "* AMateria Type : " << target.getName() << " *"<< std::endl;
 }

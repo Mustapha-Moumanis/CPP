@@ -1,6 +1,6 @@
 NAME = a.out
 
-FILES = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp
+FILES = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 CC = c++
 

@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 19:37:43 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/31 19:40:45 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/02 15:48:33 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Cure : public AMateria
 		Cure &operator = (const Cure &other);
 		~Cure();
         virtual AMateria* clone() const;
+		void use(ICharacter& target);
 };
 
 # endif
