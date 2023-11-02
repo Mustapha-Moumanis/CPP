@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 09:51:18 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/02 22:14:02 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/02 23:29:11 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Character::Character()
 	this->name = "";
 	ptr = 0;
 	allready_deleted = 0;
+	cout = 0;
 	for (int i = 0; i < 4; i++)
 		this->inventory[i] = 0;
 }
@@ -25,6 +26,7 @@ Character::Character(std::string const & name)
 {
 	this->name = name;
 	ptr = 0;
+	cout = 0;
 	allready_deleted = 0;
 	for (int i = 0; i < 4; i++)
 		this->inventory[i] = 0;
@@ -32,7 +34,17 @@ Character::Character(std::string const & name)
 
 Character::Character(Character &other) 
 {
-	*this = other;
+	name = other.name;
+	ptr = other.ptr;
+	allready_deleted = other.allready_deleted;
+	cout = other.cout;
+	for (int i = 0; i < 4; i++)
+	{
+		if (other.inventory[i])
+			this->inventory[i] = other.inventory[i]->clone();
+		else
+			this->inventory[i] = 0;
+	}
 }
 
 Character &Character::operator=(const Character &other)
@@ -43,7 +55,15 @@ Character &Character::operator=(const Character &other)
 		ptr = other.ptr;
 		allready_deleted = other.allready_deleted;
 		for (int i = 0; i < 4; i++)
-			this->inventory[i] = other.inventory[i];
+			if (this->inventory[i])
+				delete this->inventory[i];
+		for (int i = 0; i < 4; i++)
+		{
+			if (other.inventory[i])
+				this->inventory[i] = other.inventory[i]->clone();
+			else
+				this->inventory[i] = 0;
+		}
 	}
 	return *this;
 }
@@ -53,9 +73,12 @@ Character::~Character()
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->inventory[i])
-            delete this->inventory[i];
+			delete this->inventory[i];
 	}
-	
+	if (ptr)
+		delete ptr;
+	if (allready_deleted)
+		delete allready_deleted ;
 }
 
 std::string const & Character::getName() const
@@ -65,19 +88,27 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-	for (int i = 0; i < 4; i++)
+	if (cout < 4)
 	{
-		if (this->inventory[i] == m)
-			return ;
-		if (this->inventory[i] == 0)
+		for (int i = 0; i < 4; i++)
 		{
-			this->inventory[i] = m;
-			return ;
+			if (this->inventory[i] == m)
+				return ;
+			if (this->inventory[i] == 0)
+			{
+				this->inventory[i] = m;
+				cout++;
+				return ;
+			}
 		}
-	}
-	if (allready_deleted && (allready_deleted != m))
 		delete m;
-	allready_deleted = m;
+	}
+	else
+	{
+		if (allready_deleted != m)
+			delete allready_deleted;
+		allready_deleted = m;
+	}
 }
 
 void Character::unequip(int idx)

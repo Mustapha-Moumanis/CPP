@@ -4,7 +4,7 @@ FILES = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+FLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
 
 all: $(NAME)
 

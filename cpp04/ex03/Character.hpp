@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 09:51:27 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/02 20:19:54 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/02 23:09:06 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Character : public ICharacter
         std::string name;
         AMateria *inventory[4];
         AMateria *ptr;
+        int cout;
         AMateria *allready_deleted;
     public:
         Character();
