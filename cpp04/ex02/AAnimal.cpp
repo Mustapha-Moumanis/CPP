@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:25:43 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/31 18:15:50 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/03 22:11:17 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,4 @@ AAnimal::~AAnimal()
 std::string AAnimal::getType() const
 {
 	return type;
-}
-
-void AAnimal::makeSound() const
-{
-	std::cout << "AAnimal Sound!!" << std::endl;
 }
