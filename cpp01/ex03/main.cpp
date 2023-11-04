@@ -6,14 +6,14 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:43:19 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/06 01:14:54 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:13:43 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+# include <iostream>
+# include "Weapon.hpp"
+# include "HumanA.hpp"
+# include "HumanB.hpp"
 
 int main()
 {

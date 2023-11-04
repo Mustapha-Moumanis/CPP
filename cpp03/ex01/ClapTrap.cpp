@@ -6,11 +6,11 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:28:32 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/25 14:36:51 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:13:43 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() : Name("*ClapTrap*"), hitPoints(10), energyPoints(10), attackDamage(0)
 {

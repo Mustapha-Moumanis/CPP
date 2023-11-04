@@ -6,11 +6,11 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:45:49 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/06 01:14:17 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:13:43 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+# include "Weapon.hpp"
 
 Weapon::Weapon(std::string t) : type(t)
 {

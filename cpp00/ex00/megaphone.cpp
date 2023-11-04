@@ -6,11 +6,11 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 22:49:39 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/13 23:35:05 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:13:01 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+# include <iostream>
 
 void    toUpperCase(std::string str)
 {

@@ -6,14 +6,14 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:32:25 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/25 18:16:35 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:13:43 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
 class  FragTrap : public ClapTrap
 {    public :

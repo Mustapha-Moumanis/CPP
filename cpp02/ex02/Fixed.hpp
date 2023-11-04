@@ -6,15 +6,15 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:30:05 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/23 18:42:05 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:13:43 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-#include <iostream>
-#include <math.h>
+# include <iostream>
+# include <math.h>
 
 class Fixed 
 {

@@ -6,15 +6,15 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:45:41 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/15 02:03:11 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:13:43 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef HUMANA_HPP
 # define HUMANA_HPP
 
-#include <iostream>
-#include "Weapon.hpp"
+# include <iostream>
+# include "Weapon.hpp"
 
 class HumanA
 {

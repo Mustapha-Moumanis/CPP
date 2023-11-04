@@ -1,4 +1,4 @@
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -11,7 +11,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() : Name("*ClapTrap*"), hitPoints(10), energyPoints(10), attackDamage(0)
 {

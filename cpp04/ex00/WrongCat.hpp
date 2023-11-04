@@ -13,8 +13,8 @@
 # ifndef WRONGCAT_CPP
 # define WRONGCAT_CPP
 
-#include <iostream>
-#include "WrongAnimal.hpp"
+# include <iostream>
+# include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal
 {

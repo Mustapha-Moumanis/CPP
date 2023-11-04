@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 00:54:36 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/15 02:25:42 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:13:43 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define SEDISFORLOSERS_HPP
 
 
-#include <iostream>
-#include <fstream>
+# include <iostream>
+# include <fstream>
 
 class SedIsForLosers
 {

@@ -6,11 +6,11 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 00:54:34 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/10/15 02:25:57 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:13:43 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "SedIsForLosers.hpp"
+# include "SedIsForLosers.hpp"
 
 SedIsForLosers::SedIsForLosers(std::ifstream &file, std::string fname, std::string str1, std::string str2) : ifs(file), s1(str1), s2(str2)
 {
