@@ -1,6 +1,6 @@
 NAME = a.out
 
-FILES = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp
+FILES = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 CC = c++
 

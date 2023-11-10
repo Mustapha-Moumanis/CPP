@@ -6,7 +6,22 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:05:12 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/07 19:05:13 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/10 17:55:24 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AForm.hpp"
+
+class ShrubberyCreationForm : public AForm
+{
+    private:
+        std::string target;
+    public:
+        ShrubberyCreationForm();
+        ShrubberyCreationForm(std::string t);
+        ShrubberyCreationForm(const ShrubberyCreationForm &other);
+        ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
+        ~ShrubberyCreationForm();
+        
+		void execute(Bureaucrat const & executor) const;
+};

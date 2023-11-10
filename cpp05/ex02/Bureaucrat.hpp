@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 16:31:50 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/07 18:47:43 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/10 17:56:38 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ class Bureaucrat
 		void increment();
 		void decrement();
 		void signForm(AForm &AForm);
+
+		void executeForm(AForm const & form);
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& rhs);

@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 16:31:52 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/07 20:55:58 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:22:52 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void Bureaucrat::signForm(AForm &AForm)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << name << " couldn't sign " << AForm.getName() << " because " << e.what() << ".\n";
+		std::cerr << name << " couldn't sign " << AForm.getName() << " because " << e.what() << ".\n";
 	}
 }
 
@@ -91,4 +91,17 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &rhs)
 {
 	os << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
 	return os;
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << name << " executed " << form.getName() << std::endl;
+	}
+	catch(std::exception & e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 16:31:52 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/07 20:04:17 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:23:19 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
     return "This grade is so Low.";
 }
 
-Bureaucrat::~Bureaucrat()
-{
-    // std::cout << "Distractor called" << std::endl;
-}
+Bureaucrat::~Bureaucrat() {}
 
 std::string Bureaucrat::getName() const
 {
