@@ -6,24 +6,23 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:05:15 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/10 17:55:30 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/10 21:35:58 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm():AForm("ShrubberyCreationForm", 25, 5)
+ShrubberyCreationForm::ShrubberyCreationForm():AForm("Shrubbery Creation", 145, 137)
 {
 	target = "undefined";
-    std::cout << target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 };
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string t):AForm("ShrubberyCreationForm", 25, 5)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string t):AForm("Shrubbery Creation", 145, 137)
 {
 	target = t;
-	std::cout << target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
+
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other):AForm(other.getName(), other.getGradeSign(), other.getGradeExecute())
 {
 	target = other.target;
@@ -32,13 +31,61 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
 {
 	target = other.target;
-	return *this; 
+	return *this;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
+void ShrubberyCreationForm::DesignTree() const
+{
+	std::ofstream ofs(target + "_shrubbery");
+	if (ofs.is_open())
+	{
+		ofs << "               *             ,\n"
+		<< "                             _/^\\_\n"
+		<< "                            <     >\n"
+		<< "           *                 /.-.\\         *\n"
+		<< "                    *        `/&\\`                   *\n"
+		<< "                            ,@.*;@,\n"
+		<< "                           /_o.I %_\\    *\n"
+		<< "              *           (`'--:o(_@;\n"
+		<< "                         /`;--.,__ `')             *\n"
+		<< "                        ;@`o % O,*`'`&\n"
+		<< "                  *    (`'--)_@ ;o %'()\\      *\n"
+		<< "                       /`;--._`''--._O'@;\n"
+		<< "                      /&*,()~o`;-.,_ `""`)\n"
+		<< "           *          /`,@ ;+& () o*`;-';\n"
+		<< "                     (`""--.,_0 +% @' &()\\\n"
+		<< "                     /-.,_    ``''--....-'`)  *\n"
+		<< "                *    /@%;o`:;'--,.__   __.'\\\n"
+		<< "                    ;*,&(); @ % &^;~`\"`o;@();         *\n"
+		<< "                    /(); o^~; & ().o@*&`;&%O\\\n"
+		<< "                    `\"=\"==\"\"==,,,.,=\"==\"===\"`\n"
+		<< "                              #####\n"
+		<< "                              #####\n"
+		<< "                              #####"
+		<< std::endl;
+		ofs.close(); 
+	}
+	else
+		throw("You have a problem if the File : ");
+}
+
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	if (!getSign() || (executor.getGrade() > getGradeExecute()))
+	if (!getSign())
+		throw (NoSignException());
+	else if (executor.getGrade() > getGradeExecute())
 		throw (GradeTooLowException());
+	else
+	{
+		try
+		{
+			DesignTree();
+		}
+		catch(const char *e)
+		{
+			std::cerr << e <<  target << "_shrubbery"<< std::endl;
+		}
+	}
 }

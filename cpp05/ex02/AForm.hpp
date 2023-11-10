@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:25:19 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/09 23:46:02 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/10 20:26:26 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ class AForm
 				const char* what() const throw();
 		};
 		class GradeTooLowException: public std::exception
+		{
+			public :
+				const char* what() const throw();
+		};
+		class NoSignException: public std::exception
 		{
 			public :
 				const char* what() const throw();
