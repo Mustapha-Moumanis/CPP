@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:10:50 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/10 21:34:54 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:15:58 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ PresidentialPardonForm::~PresidentialPardonForm() {}
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	if (!getSign())
-		throw (NoSignException());
-	else if (executor.getGrade() > getGradeExecute())
+	if (!getSign() || (executor.getGrade() > getGradeExecute()))
 		throw (GradeTooLowException());
 	else
     	std::cout << target << " has been pardoned by Zaphod Beeblebrox." << std::endl;

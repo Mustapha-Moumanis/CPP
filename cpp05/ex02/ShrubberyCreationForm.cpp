@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:05:15 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/10 21:35:58 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/13 20:22:22 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,27 +65,16 @@ void ShrubberyCreationForm::DesignTree() const
 		<< "                              #####\n"
 		<< "                              #####"
 		<< std::endl;
-		ofs.close(); 
+		ofs.close();
 	}
 	else
-		throw("You have a problem if the File : ");
+		throw(std::ios_base::failure("You have a problem if the File : " + target + "_shrubbery "));
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	if (!getSign())
-		throw (NoSignException());
-	else if (executor.getGrade() > getGradeExecute())
+	if (!getSign() || (executor.getGrade() > getGradeExecute()))
 		throw (GradeTooLowException());
 	else
-	{
-		try
-		{
-			DesignTree();
-		}
-		catch(const char *e)
-		{
-			std::cerr << e <<  target << "_shrubbery"<< std::endl;
-		}
-	}
+		DesignTree();
 }
