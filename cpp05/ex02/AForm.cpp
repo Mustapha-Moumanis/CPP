@@ -6,13 +6,13 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 20:29:28 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/13 20:16:50 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/14 20:54:57 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "AForm.hpp"
 
-AForm::AForm() : name("leader"), sign(0), gradeSign(1), gradeExecute(1) {}
+AForm::AForm() : name("AForm"), sign(0), gradeSign(1), gradeExecute(1) {}
 
 AForm::AForm(std::string n, int gradeS, int gradeE) : name(n), gradeSign(gradeS), gradeExecute(gradeE)
 {

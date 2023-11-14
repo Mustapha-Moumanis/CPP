@@ -6,18 +6,18 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:25:19 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/13 20:17:19 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/14 20:50:05 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
 #include "Bureaucrat.hpp"
 class Bureaucrat;
 
-class AForm 
+class AForm
 {
 	private:
         const std::string name;

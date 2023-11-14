@@ -6,13 +6,13 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 16:31:52 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/10 18:23:19 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/14 20:55:52 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("leader"), grade(1) {}
+Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(1) {}
 
 Bureaucrat::Bureaucrat(const std::string n, int g) : name(n)
 {
