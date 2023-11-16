@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:28:06 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/14 20:57:50 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/15 12:07:31 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,16 @@
 Intern::Intern() {
 }
 
-// Intern::Intern(const Intern &other)
-// {
-//     *this = other;
-// }
+Intern::Intern(const Intern &other)
+{
+    *this = other;
+}
 
-// Intern &Intern::operator=(const Intern &other)
-// {
-//     return *this;
-// }
-
-// #include "PresidentialPardonForm.hpp"
-// #include "RobotomyRequestForm.hpp"
-// #include "ShrubberyCreationForm.hpp"
-
+Intern &Intern::operator=(const Intern &other)
+{
+    (void)other;
+    return *this;
+}
 
 Intern::~Intern() {}
 

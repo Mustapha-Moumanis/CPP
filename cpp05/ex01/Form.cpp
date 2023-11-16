@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 20:29:28 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/14 20:55:06 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/15 18:10:28 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Form::Form(std::string n, int gradeS, int gradeE) : name(n), gradeSign(gradeS), 
     sign = 0;
 }
 
-Form::Form(const Form &other):name(other.name), gradeSign(other.gradeSign), gradeExecute(1)
+Form::Form(const Form &other):name(other.name), gradeSign(other.gradeSign), gradeExecute(other.gradeExecute)
 {
     *this = other;
 }

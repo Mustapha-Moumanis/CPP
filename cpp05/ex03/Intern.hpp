@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:28:02 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/14 11:56:13 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/15 12:08:40 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class Intern
 	AForm *newShrubForm(std::string t);
 	public :
 		Intern();
-		// Intern(const Intern &other);
-		// Intern &operator=(const Intern &other);
-		virtual ~Intern();
+		Intern(const Intern &other);
+		Intern &operator=(const Intern &other);
+		~Intern();
 		class FormNotFound: public std::exception
 		{
 			public :

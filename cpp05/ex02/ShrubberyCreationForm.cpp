@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:05:15 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/14 21:15:50 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:29:43 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,47 +36,42 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
-void ShrubberyCreationForm::DesignTree() const
-{
-	std::ofstream ofs;
-	ofs.exceptions(std::ofstream::failbit);
-	ofs.open(target + "_shrubbery");
-	if (ofs.is_open())
-	{
-		ofs << "               *             ,\n"
-		<< "                             _/^\\_\n"
-		<< "                            <     >\n"
-		<< "           *                 /.-.\\         *\n"
-		<< "                    *        `/&\\`                   *\n"
-		<< "                            ,@.*;@,\n"
-		<< "                           /_o.I %_\\    *\n"
-		<< "              *           (`'--:o(_@;\n"
-		<< "                         /`;--.,__ `')             *\n"
-		<< "                        ;@`o % O,*`'`&\n"
-		<< "                  *    (`'--)_@ ;o %'()\\      *\n"
-		<< "                       /`;--._`''--._O'@;\n"
-		<< "                      /&*,()~o`;-.,_ `""`)\n"
-		<< "           *          /`,@ ;+& () o*`;-';\n"
-		<< "                     (`""--.,_0 +% @' &()\\\n"
-		<< "                     /-.,_    ``''--....-'`)  *\n"
-		<< "                *    /@%;o`:;'--,.__   __.'\\\n"
-		<< "                    ;*,&(); @ % &^;~`\"`o;@();         *\n"
-		<< "                    /(); o^~; & ().o@*&`;&%O\\\n"
-		<< "                    `\"=\"==\"\"==,,,.,=\"==\"===\"`\n"
-		<< "                              #####\n"
-		<< "                              #####\n"
-		<< "                              #####"
-		<< std::endl;
-		ofs.close();
-	}
-	// else
-	// 	throw(std::ios_base::failure("You have a problem if the File : " + target + "_shrubbery "));
-}
-
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	if (!getSign() || (executor.getGrade() > getGradeExecute()))
 		throw (GradeTooLowException());
 	else
-		DesignTree();
+	{
+		std::ofstream ofs(target + "_shrubbery");
+		if (ofs.is_open())
+		{
+			ofs << "               *\n"
+			<< "                             _/^\\_\n"
+			<< "                            <     >\n"
+			<< "           *                 /.-.\\         *\n"
+			<< "                    *        `/&\\`                   *\n"
+			<< "                            ,@.*;@,\n"
+			<< "                           /_o.I %_\\    *\n"
+			<< "              *           (`'--:o(_@;\n"
+			<< "                         /`;--.,__ `')             *\n"
+			<< "                        ;@`o % O,*`'`&\n"
+			<< "                  *    (`'--)_@ ;o %'()\\      *\n"
+			<< "                       /`;--._`''--._O'@;\n"
+			<< "                      /&*,()~o`;-.,_ `""`)\n"
+			<< "           *          /`,@ ;+& () o*`;-';\n"
+			<< "                     (`""--.,_0 +% @' &()\\\n"
+			<< "                     /-.,_    ``''--....-'`)  *\n"
+			<< "                *    /@%;o`:;'--,.__   __.'\\\n"
+			<< "                    ;*,&(); @ % &^;~`\"`o;@();         *\n"
+			<< "                    /(); o^~; & ().o@*&`;&%O\\\n"
+			<< "                    `\"=\"==\"\"==,,,.,=\"==\"===\"`\n"
+			<< "                              #####\n"
+			<< "                              #####\n"
+			<< "                              #####"
+			<< std::endl;
+			ofs.close();
+		}
+		else
+			throw std::runtime_error("Problem in " + target + "_shrubbery File");
+	}
 }

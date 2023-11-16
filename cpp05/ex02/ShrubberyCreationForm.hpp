@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:05:12 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/10 20:18:38 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:56:14 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ class ShrubberyCreationForm : public AForm
         ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
         ~ShrubberyCreationForm();
         
-        void DesignTree() const;
 		void execute(Bureaucrat const & executor) const;
 };
