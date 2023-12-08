@@ -1,7 +1,7 @@
 NAME = a.out
 
-FILES = main.cpp Span.cpp
-HFILES = Span.hpp
+FILES = main.cpp
+HFILES = MutantStack.hpp
 
 CC = c++
 
