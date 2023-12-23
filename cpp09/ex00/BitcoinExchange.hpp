@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 09:17:27 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/12/19 18:42:15 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/12/23 11:57:47 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <map>
 #include <sstream>
 #include <utility>
+#include <algorithm>
 
 class BitcoinExchange
 {

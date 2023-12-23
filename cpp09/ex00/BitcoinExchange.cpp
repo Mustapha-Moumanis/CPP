@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 09:17:29 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/12/19 18:43:44 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/12/21 22:22:55 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,8 @@ void BitcoinExchange::initBtcData(std::string fileName) {
 			ifs.close();
 			throw std::runtime_error("you have a problem in btc data");
 		}
-		Data.insert(std::pair<double, double>(toDays, dValue));
+		Data.insert(std::make_pair(toDays, dValue));
+		// Data.insert(std::pair<double, double>(toDays, dValue));
 	}
 	if (Data.empty()) {
 		ifs.close();
@@ -136,7 +137,7 @@ bool BitcoinExchange::checkLineFormat(std::string line) {
 
 bool BitcoinExchange::checkValidDate(std::string date) {
 
-	std::istringstream ss(date);
+	std::stringstream ss(date);
 	std::string sYear;
 	std::string sMonth;
 	std::string sDay;
