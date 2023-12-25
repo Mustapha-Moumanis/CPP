@@ -6,100 +6,87 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:58:40 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/12/23 22:51:28 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/12/25 17:35:13 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe() {}
+PmergeMe::PmergeMe() : saved(-1) {}
+
+PmergeMe::PmergeMe(const PmergeMe &other) {
+	*this = other;
+}
+
+PmergeMe &PmergeMe::operator=(const PmergeMe &other) {
+    if (this == &other)
+		return *this;
+	saved = other.saved;
+	arr = other.arr;
+	pairVector = other.pairVector;
+	pairDeque = other.pairDeque;
+	return *this;
+}
 
 PmergeMe::~PmergeMe() {}
 
-void PmergeMe::insertElement(unsigned int var) {
-	vector.push_back(var);
-	deque.push_back(var);
-}
-
-template<typename container>
-void PmergeMe::InsertionSort(container &cnt, int begin, int end) {
-	unsigned int value;
-	int j;
+void PmergeMe::insertData(std::vector<unsigned int> arr) {
+	unsigned int i = 1;
+	this->arr = arr;
+	while (i < arr.size()) {
+		pairVector.push_back(std::make_pair(arr[i - 1], arr[i]));
+		pairDeque.push_back(std::make_pair(arr[i - 1], arr[i]));
+		i += 2;
+	}
 	
-	for (int i = begin + 1; i < end; i++) {
-		value = cnt[i];
-		j = i - 1;
-		
-		while (j >= begin && cnt[j] > value) {
-			cnt[j + 1] = cnt[j];
-			j--;
-		}
-		cnt[j + 1] = value;
-	}
-}
-
-void PmergeMe::VectorMergeInsertionSort() {
-	if (is_sorted(vector.begin(), vector.end()))
-		throw std::invalid_argument("Allready sorted!!");
-	std::vector<std::pair<unsigned int, unsigned int> > pairVector;
-	for (std::vector<unsigned int>::iterator it = vector.begin() + 1; it != vector.end(); it++) {
-		pairVector.push_back(std::make_pair(*(it - 1), *it));
-		if (it + 1 != vector.end())
-			it++;
-	}
-	std::deque<std::pair<unsigned int, unsigned int> > pairDeque;
-	for (std::deque<unsigned int>::iterator it = deque.begin() + 1; it != deque.end(); it++) {
-		pairDeque.push_back(std::make_pair(*(it - 1), *it));
-		if (it + 1 != deque.end())
-			it++;
-	}
-	std::cout << std::fixed;
-	std::cout << "Before:  ";
-	printContainer(vector);
-	std::cout << std::endl;
-
-	FordJhonsonSort(vector, pairVector, vectorSpeed);
-	FordJhonsonSort(deque, pairDeque, dequeSpeed);
-	std::cout << "After:   ";
-	printContainer(vector);
-	std::cout << std::endl;
-	
-	std::cout << "Time to process a range of " << vector.size() << " elements with std::vector : " << vectorSpeed << " s" << std::endl;
-	std::cout << "Time to process a range of " << deque.size() << " elements with std::deque : " << dequeSpeed << " s" << std::endl;
+	if (arr.size() % 2 != 0)
+		saved = arr[arr.size() - 1];
 }
 
 template <typename C, typename P>
-void PmergeMe::FordJhonsonSort(C &container, P containerPair, double &speed) {
-	C		First;
+void PmergeMe::FordJhonsonAlgo(C &First, P containerPair, double &speed) {
 	C		Second;
 	clock_t	t;
 
 	t = clock();
-	// sort pairs and
-	// (void)speed;
-	// for (typename P::iterator it = containerPair.begin(); it < containerPair.end(); it++) {
-	// 	if(it->first > it->second)
-	// 		std::swap(it->first, it->second);
-	// 	First.push_back(it->first);
-	// 	Second.push_back(it->second);
-	// }
-	
+
 	for (size_t i = 0; i < containerPair.size(); i++) {
 		if(containerPair[i].first > containerPair[i].second)
 			std::swap(containerPair[i].first, containerPair[i].second);
-		First.push_back(containerPair[i].first);
-		Second.push_back(containerPair[i].second);
 	}
-	
+
+	for (size_t i = 0; i < containerPair.size(); i++)
+		First.push_back(containerPair[i].first);
+	for (size_t i = 0; i < containerPair.size(); i++)
+		Second.push_back(containerPair[i].second);
+
 	std::sort(First.begin(), First.end());
 
 	for (size_t i = 0; i < Second.size(); i++)
 		First.insert(lower_bound(First.begin(), First.end(), Second[i]), Second[i]);
-	if (container.size() % 2 != 0)
-		First.insert(lower_bound(First.begin(), First.end(), container.back()), container.back());
+	if (saved != -1)
+		First.insert(lower_bound(First.begin(), First.end(), saved), saved);
+
 	t = clock() - t;
 	speed = ((double)t) / CLOCKS_PER_SEC;
-	container = First;
+}
+
+void PmergeMe::Execute() {
+	std::vector<unsigned int> vector;
+	std::deque<unsigned int> deque;
+	FordJhonsonAlgo(vector, pairVector, vectorSpeed);
+	FordJhonsonAlgo(deque, pairDeque, dequeSpeed);
+	std::cout << std::fixed;
+	std::cout << "Before:  ";
+	printContainer(arr);
+	std::cout << std::endl;
+	std::cout << "After:   ";
+	printContainer(deque);
+	std::cout << std::endl;
+	
+	std::cout << "Time to process a range of " << vector.size() << " elements with std::vector : " << vectorSpeed << " s" << std::endl;
+	std::cout << "Time to process a range of " << deque.size() << " elements with std::deque : " << dequeSpeed << " s" << std::endl;
+	saved = -1;
 }
 
 template <typename C>
@@ -107,4 +94,9 @@ void PmergeMe::printContainer(C container) {
 	for (typename C::iterator it = container.begin(); it != container.end(); it++) {
 		std::cout << *it << " ";
 	}
+}
+
+void isValid(std::string element) {
+	if (element.empty() || (element.find_first_not_of("0123456789") != std::string::npos))
+		throw std::invalid_argument("Error");
 }

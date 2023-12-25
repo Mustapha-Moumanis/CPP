@@ -6,13 +6,12 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:38:21 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/30 15:49:23 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/12/24 21:11:41 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 #include <vector>
-#include <array>
 
 int main()
 {
