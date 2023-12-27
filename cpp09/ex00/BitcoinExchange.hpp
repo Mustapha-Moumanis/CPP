@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 09:17:27 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/12/23 11:57:47 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/12/27 11:40:19 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,16 @@
 class BitcoinExchange
 {
 	private:
+		std::string fileName;
 		std::multimap<int, double> Data;
 		int year, month, day, toDays;
+
+		void initBtcData(std::string fn);
+		bool checkLineFormat(std::string line);
+		bool checkValidDate(std::string date);
+		bool checkValue(double value);
+		void Exchange(std::string date, double value);
+
 	public:
 		BitcoinExchange();
 		BitcoinExchange(std::string fileName);
@@ -33,12 +41,8 @@ class BitcoinExchange
 		BitcoinExchange &operator=(const BitcoinExchange &other);
 		~BitcoinExchange();
 		
-		void initBtcData(std::string fn);
-		bool checkLineFormat(std::string line);
-		bool checkValidDate(std::string date);
-		bool checkValue(double value);
-		void Exchange(std::string date, double value);
-
+		void Execute();
+		
 		// utils
 		bool isRegFile(std::string path);
 		bool printError(std::string error);

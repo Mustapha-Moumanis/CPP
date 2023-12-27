@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 09:02:27 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/11/26 11:33:53 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:58:37 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 template <typename T>
-void printElement(T &a)
+int printElement(T &a)
 {
     std::cout << a << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 09:17:42 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/12/17 15:56:06 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/12/27 10:54:55 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main(int ac, char **av)
 			throw std::runtime_error("Error: could not open file.");
 
 		BitcoinExchange btc(av[1]);
+		btc.Execute();
 	}
 	catch(const std::exception& e)
 	{

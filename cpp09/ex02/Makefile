@@ -6,22 +6,25 @@ HFILES = PmergeMe.hpp
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g3
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJS = $(CFILES:.cpp=.o)
 
 all: $(NAME)
 
-%.o: %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+$(OBJS) : $(CFILES)
+	@echo "compilation FILES ..."
+	@$(CC) $(FLAGS) -c $(CFILES)
 
 $(NAME): $(OBJS) $(HFILES)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	rm -f $(OBJS)
+	@echo "cleaning OBJS files"
+	@rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "cleaning PmergeMe file"
+	@rm -f $(NAME)
 
 re: fclean all

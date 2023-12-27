@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 09:17:29 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/12/21 22:22:55 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/12/27 13:53:29 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,27 @@ BitcoinExchange::BitcoinExchange() {}
 
 BitcoinExchange::BitcoinExchange(std::string fileName) {
 	initBtcData("data.csv");
+	this->fileName = fileName;
+}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &other){
+	*this = other;
+}
+
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) {
+    if (this == &other)
+        return *this;
+	Data = other.Data;
+	this->fileName = other.fileName;
+    return *this;
+}
+
+BitcoinExchange::~BitcoinExchange() {}
+
+void BitcoinExchange::Execute() {
 	// check file
+	if (fileName.empty())
+		throw std::runtime_error("Error: could not open file.");
 	if (!isRegFile(fileName))
 		throw std::runtime_error(fileName + " is not a regular file");
 	std::ifstream ifs;
@@ -34,8 +54,19 @@ BitcoinExchange::BitcoinExchange(std::string fileName) {
 		ifs.close();
 		throw std::runtime_error("Data must be \"date | value\"");
 	}
-	while (std::getline(ifs, line)) {
+	if (ifs.eof()) {
+		ifs.close();
+		throw std::runtime_error("No Data to extchange");
+	}
+	while (1337) {
 		// check valid line format
+		if (ifs.eof())
+			break;
+		std::getline(ifs, line);
+		// printError("Empty input" + line);
+		// if (line.empty())
+		// 	printError("Empty input" + line);
+		
 		if (checkLineFormat(line))
 			continue;
 
@@ -61,20 +92,9 @@ BitcoinExchange::BitcoinExchange(std::string fileName) {
 		// Exchange
 		Exchange(date, value);
 	}
+	
+	ifs.close();
 }
-
-BitcoinExchange::BitcoinExchange(const BitcoinExchange &other){
-	*this = other;
-}
-
-BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) {
-    if (this == &other)
-        return *this;
-	Data = other.Data;
-    return *this;
-}
-
-BitcoinExchange::~BitcoinExchange() {}
 
 void BitcoinExchange::initBtcData(std::string fileName) {
 	std::ifstream ifs;
@@ -90,7 +110,12 @@ void BitcoinExchange::initBtcData(std::string fileName) {
 		ifs.close();
 		throw std::runtime_error("Data must be \"date,exchange_rate\"");
 	}
-	while (std::getline(ifs, line)) {
+
+	while (1337) {
+		std::getline(ifs, line);
+		if (ifs.eof()) 
+			break;
+
 		std::stringstream check(line);
 		std::string date;
 		std::string value;
@@ -110,25 +135,22 @@ void BitcoinExchange::initBtcData(std::string fileName) {
 			throw std::runtime_error("you have a problem in btc data");
 		}
 		Data.insert(std::make_pair(toDays, dValue));
-		// Data.insert(std::pair<double, double>(toDays, dValue));
 	}
 	if (Data.empty()) {
 		ifs.close();
 		throw std::runtime_error(fileName + " file is empty.");
 	}
 	ifs.close();
-
-	for (std::map<int, double>::iterator i = Data.begin(); i != Data.end(); i++)
-		std::cout << i->first << " => " << i->second << std::endl;
 }
 
 bool BitcoinExchange::checkLineFormat(std::string line) {
 	if (line.empty())
 		return printError("Empty input" + line);
+		// return 1;
 	if (line.size() < 14)
 		return printError("bad input => " + line);
 	std::string date = line.substr(0, 10);
-	std::string siparator =  line.substr(10, 3);
+	std::string siparator = line.substr(10, 3);
 	std::string value = line.substr(13);
 	if (date.size() != 10 || siparator != " | " || !isNumber(value))
 		return printError("bad input => " + line);

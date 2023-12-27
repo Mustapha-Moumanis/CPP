@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 18:57:12 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/12/25 17:34:43 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/12/26 20:32:46 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,13 @@ int main(int ac, char **av)
 
 		std::vector<unsigned int> vec;
 		int i = 1;
+		size_t var;
 		while (i < ac) {
 			isValid(av[i]);
-			vec.push_back(atol(av[i]));
+			var = atol(av[i]);
+			if (var > INT_MAX)
+				throw std::runtime_error("You have a invalid argument");
+			vec.push_back(var);
 			i++;
 		}
 		if (std::is_sorted(vec.begin(), vec.end()))

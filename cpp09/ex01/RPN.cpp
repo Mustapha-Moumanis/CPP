@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 18:56:53 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/12/21 09:53:28 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/12/27 11:34:48 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,28 @@
 RPN::RPN() {}
 
 RPN::RPN(std::string arg) {
-    // CheckArg(arg);
     if (arg.empty() || (arg.find_first_not_of("0123456789 -*/+") != std::string::npos))
         throw std::invalid_argument("Error");
-    
-    std::stringstream ss(arg);
+    this->arg = arg;
+}
+
+RPN::RPN(const RPN &other){
+	*this = other;
+}
+
+RPN &RPN::operator=(const RPN &other) {
+    if (this == &other)
+        return *this;
+    arg = other.arg;
+    return *this;
+}
+
+RPN::~RPN() {
+}
+
+void RPN::Execute() const{
+    std::stack<int> stack;
+    std::stringstream ss(this->arg);
     std::string check;
     ss >> check;
     while (!check.empty()) {
@@ -44,10 +61,7 @@ RPN::RPN(std::string arg) {
     std::cout << stack.top() << std::endl;
 }
 
-RPN::~RPN() {
-}
-
-int RPN::calcule(int var1, int var2, char oprt) {
+int RPN::calcule(int var1, int var2, char oprt) const {
     switch (oprt)
     {
     case '+':

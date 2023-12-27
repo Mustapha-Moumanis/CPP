@@ -6,7 +6,7 @@
 /*   By: mmoumani <mmoumani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:58:40 by mmoumani          #+#    #+#             */
-/*   Updated: 2023/12/25 17:35:13 by mmoumani         ###   ########.fr       */
+/*   Updated: 2023/12/26 20:32:59 by mmoumani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void PmergeMe::insertData(std::vector<unsigned int> arr) {
 	
 	if (arr.size() % 2 != 0)
 		saved = arr[arr.size() - 1];
-}
+} 
 
 template <typename C, typename P>
 void PmergeMe::FordJhonsonAlgo(C &First, P containerPair, double &speed) {
@@ -86,7 +86,6 @@ void PmergeMe::Execute() {
 	
 	std::cout << "Time to process a range of " << vector.size() << " elements with std::vector : " << vectorSpeed << " s" << std::endl;
 	std::cout << "Time to process a range of " << deque.size() << " elements with std::deque : " << dequeSpeed << " s" << std::endl;
-	saved = -1;
 }
 
 template <typename C>
